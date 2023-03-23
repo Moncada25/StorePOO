@@ -1,16 +1,30 @@
-import utils
-from product import Product
+from utils import utils
+from models.client import Client
+from models.distributor import Distributor
+from models.product import Product
 
 
 class Store:
     name = 'Mascotas para todos'
     product_list = []
+    client_list = []
+    distributor_list = []
 
     def start(self):
         self.product_list.append(Product('Arena', 15000, 10))
         self.product_list.append(Product('Max Cat', 144000, 5))
         self.product_list.append(Product('Collar de gato', 5000, 9))
         self.product_list.append(Product('Dog show', 4000, 30))
+
+        self.client_list.append(Client(1, 'Pepito', 'Perez', 23, 0, 0))
+        self.client_list.append(Client(1, 'Olga', 'Zan', 23, 0, 0))
+        self.client_list.append(Client(1, 'Tuma', 'Má', 23, 0, 0))
+        self.client_list.append(Client(1, 'PvP o miedo', ':v', 23, 0, 0))
+
+        self.distributor_list.append(Distributor('Purina', 0, 12345, 'Marcos', 'Toro', 38))
+        self.distributor_list.append(Distributor('Mascotas la 70', 0, 12345, 'Carlitos', 'XD', 38))
+        self.distributor_list.append(Distributor('Exito', 0, 12345, 'Juan', 'Casas', 38))
+        self.distributor_list.append(Distributor('Euro', 0, 12345, 'Benito', 'Camelo', 38))
 
         self.show_menu()
 
@@ -22,24 +36,25 @@ class Store:
                                            '1. Mostrar todos los productos. \n'
                                            '2. Agregar un producto. \n'
                                            '3. Eliminar un producto. \n'
+                                           '4. Mostrar todos los clientes. \n'
+                                           '5. Mostrar todos los distribuidores. \n'
                                            '0. Salir.\n')
 
             match option:
                 case 0:
                     break
                 case 1:
-                    self.show_all_products()
+                    utils.show_list(self.product_list, 'productos')
                 case 2:
                     self.add_product()
                 case 3:
                     self.delete_product()
+                case 4:
+                    utils.show_list(self.client_list, 'clientes')
+                case 5:
+                    utils.show_list(self.distributor_list, 'distribuidores')
                 case _:
                     print('Opción no encontrada')
-
-    def show_all_products(self):
-        print(f'Hay {len(self.product_list)} productos')
-        for product in self.product_list:
-            product.view()
 
     def add_product(self):
         print('Ingrese el nuevo producto')

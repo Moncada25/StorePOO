@@ -1,4 +1,5 @@
-Crear una tienda que permita agregar, eliminar y ver los productos de la tienda
+Crear una tienda que permita agregar, eliminar y ver los productos de la tienda.
+La tienda tendrá también una lista de clientes y distribuidores a los que se les calculará sus respectivos descuentos.
 
 - Tienda
     * Nombre
@@ -12,3 +13,23 @@ Crear una tienda que permita agregar, eliminar y ver los productos de la tienda
     * Cantidad
     * Nombre
     - Mostrar producto
+
+- Persona
+    * Nombre
+    * Apellido
+    * Edad
+    - Show
+
+- Cliente
+    * Documento
+    * Total compras
+    * Total descuentos
+    * View
+    /Persona
+
+- Distribuidor
+    * Empresa
+    * Descuento
+    * PBX
+    - View
+    /Persona
