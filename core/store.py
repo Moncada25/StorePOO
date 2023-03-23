@@ -26,7 +26,7 @@ class Store:
         self.distributor_list.append(Distributor('Exito', 0, 12345, 'Juan', 'Casas', 38))
         self.distributor_list.append(Distributor('Euro', 0, 12345, 'Benito', 'Camelo', 38))
 
-        self.show_menu()
+        #self.show_menu()
 
     def show_menu(self):
         while True:

@@ -10,6 +10,8 @@ def validate_number(message):
 
 
 def show_list(list_to_show, name):
-    print(f'Hay {len(list_to_show)} {name}')
+    list_string = f"Hay {len(list_to_show)} {name}\n"
     for item in list_to_show:
-        item.view()
+        list_string += item.view()
+
+    return list_string

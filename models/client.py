@@ -10,6 +10,7 @@ class Client(Person):
         self.total_discount = total_discount
 
     def view(self):
-        print(f'document: {self.document} \n'
-              f'total_purchases: {self.total_purchases} \n'
-              f'total_discount: {self.total_discount}')
+        return f'--------------------\n' \
+               f'document: {self.document} \n' \
+               f'total_purchases: {self.total_purchases} \n' \
+               f'total_discount: {self.total_discount}\n'

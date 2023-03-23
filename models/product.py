@@ -6,6 +6,6 @@ class Product:
         self.stock = stock
 
     def view(self):
-        print(f'--------------------\nname: {self.name} \nprice: {self.price} \nstock: {self.stock}')
+        return f'--------------------\nname: {self.name} \nprice: {self.price} \nstock: {self.stock}\n'
 
 
