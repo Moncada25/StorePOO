@@ -1,4 +1,5 @@
 from core.store import Store
+from views.add_product import add_product_view
 import tkinter as tk
 from tkinter import messagebox
 
@@ -6,8 +7,8 @@ from utils import utils
 
 
 class App:
-    app = Store()
-    app.start(True)
+    store_data = Store()
+    store_data.create(True)
 
     def __init__(self, master):
         self.master = master
@@ -34,7 +35,7 @@ class App:
         self.show_products = tk.Button(button_frame, text="Show products", command=self.btn_show_products)
         self.show_distributors = tk.Button(button_frame, text="Show distributors", command=self.btn_show_distributors)
         self.show_clients = tk.Button(button_frame, text="Show clients", command=self.btn_show_clients)
-        self.add_product = tk.Button(button_frame, text="Add product")
+        self.add_product = tk.Button(button_frame, text="Add product", command=self.btn_add_product)
         self.delete_product = tk.Button(button_frame, text="Delete product")
         self.open_chat = tk.Button(button_frame, text="Open chat", command=self.btn_open_chat)
         self.exit_exit = tk.Button(button_frame, text="Exit", command=master.quit)
@@ -49,18 +50,21 @@ class App:
         self.exit_exit.pack(side="left", padx=5)
 
     def btn_show_products(self):
-        messagebox.showinfo("All products", utils.show_list(self.app.product_list, 'products'))
+        messagebox.showinfo("All products", utils.show_list(self.store_data.product_list, 'products'))
 
     def btn_show_clients(self):
-        messagebox.showinfo("All client", utils.show_list(self.app.client_list, 'clients'))
+        messagebox.showinfo("All client", utils.show_list(self.store_data.client_list, 'clients'))
 
     def btn_show_distributors(self):
-        messagebox.showinfo("All distributors", utils.show_list(self.app.client_list, 'distributors'))
+        messagebox.showinfo("All distributors", utils.show_list(self.store_data.client_list, 'distributors'))
 
     def btn_open_chat(self):
         messagebox.showinfo("Open chat", "Chat")
 
+    def btn_add_product(self):
+        add_product_view(root, self.store_data.product_list)
+
 
 root = tk.Tk()
-app = App(root)
+store_data = App(root)
 root.mainloop()

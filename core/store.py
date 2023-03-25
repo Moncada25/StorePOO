@@ -10,7 +10,7 @@ class Store:
     client_list = []
     distributor_list = []
 
-    def start(self, latest):
+    def create(self, latest):
         self.product_list.append(Product('Arena', 15000, 10))
         self.product_list.append(Product('Max Cat', 144000, 5))
         self.product_list.append(Product('Collar de gato', 5000, 9))
