@@ -10,7 +10,7 @@ class Store:
     client_list = []
     distributor_list = []
 
-    def start(self):
+    def start(self, latest):
         self.product_list.append(Product('Arena', 15000, 10))
         self.product_list.append(Product('Max Cat', 144000, 5))
         self.product_list.append(Product('Collar de gato', 5000, 9))
@@ -26,7 +26,8 @@ class Store:
         self.distributor_list.append(Distributor('Exito', 0, 12345, 'Juan', 'Casas', 38))
         self.distributor_list.append(Distributor('Euro', 0, 12345, 'Benito', 'Camelo', 38))
 
-        #self.show_menu()
+        if not latest:
+            self.show_menu()
 
     def show_menu(self):
         while True:
