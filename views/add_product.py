@@ -8,7 +8,7 @@ entry_quantity = None
 window = None
 
 
-def confirm_data(parent_window, product_list):
+def validate_data(parent_window, product_list):
     # Acceder a las variables globales
     global entry_name, entry_price, entry_quantity
 
@@ -64,7 +64,10 @@ def add_product_view(parent_window, product_list):
     entry_quantity.pack()
 
     # Crear botón para confirmar datos
-    confirm_button = tk.Button(window, text="Confirmar datos", command=lambda:  confirm_data(parent_window, product_list))
+    confirm_button = tk.Button(
+        window, text="Confirmar datos", command=lambda:  validate_data(parent_window, product_list)
+    )
+
     confirm_button.pack()
 
     # Ejecutar la ventana

@@ -1,5 +1,6 @@
 from core.store import Store
 from views.add_product import add_product_view
+from views.show_table import show_table
 import tkinter as tk
 from tkinter import messagebox
 
@@ -50,13 +51,13 @@ class App:
         self.exit_exit.pack(side="left", padx=5)
 
     def btn_show_products(self):
-        messagebox.showinfo("All products", utils.show_list(self.store_data.product_list, 'products'))
+        show_table(self.store_data.product_list, root, "Products")
 
     def btn_show_clients(self):
-        messagebox.showinfo("All client", utils.show_list(self.store_data.client_list, 'clients'))
+        show_table(self.store_data.client_list, root, "Clients")
 
     def btn_show_distributors(self):
-        messagebox.showinfo("All distributors", utils.show_list(self.store_data.client_list, 'distributors'))
+        show_table(self.store_data.distributor_list, root, "Distributors")
 
     def btn_open_chat(self):
         messagebox.showinfo("Open chat", "Chat")
