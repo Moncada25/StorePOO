@@ -16,10 +16,13 @@ def validate_data(parent_window, product_list):
 
     product_list.append(new_product)
     tk.messagebox.showinfo("Producto agregado", new_product.view())
+    print("Llegaaa")
 
     # Mostrar la ventana padre y cerrar la ventana actual
     parent_window.deiconify()
+    print("lllll")
     window.destroy()
+    print("aaaaaaa")
 
 
 def add_product_view(parent_window, product_list):

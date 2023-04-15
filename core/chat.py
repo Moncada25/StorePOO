@@ -20,4 +20,4 @@ def make_question(question):
 
 
 if __name__ == '__main__':
-    make_question('Mostrar un cuadro de texto usando tkinter?')
+    make_question('Cómo subir una carpeta a un bucket de s3')

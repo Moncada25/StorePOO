@@ -16,7 +16,7 @@ class App:
         master.title("Store")
 
         # Configura el tamaño de la ventana
-        width = 850
+        width = 650
         height = 350
         x = (master.winfo_screenwidth() // 2) - (width // 2)
         y = (master.winfo_screenheight() // 2) - (height // 2)
@@ -36,15 +36,11 @@ class App:
         self.show_products = tk.Button(button_frame, text="Show products", command=self.btn_show_products)
         self.show_distributors = tk.Button(button_frame, text="Show distributors", command=self.btn_show_distributors)
         self.show_clients = tk.Button(button_frame, text="Show clients", command=self.btn_show_clients)
-        self.add_product = tk.Button(button_frame, text="Add product", command=self.btn_add_product)
-        self.delete_product = tk.Button(button_frame, text="Delete product")
         self.open_chat = tk.Button(button_frame, text="Open chat", command=self.btn_open_chat)
         self.exit_exit = tk.Button(button_frame, text="Exit", command=master.quit)
 
         # Empaqueta los botones
         self.show_products.pack(side="left", padx=5)
-        self.add_product.pack(side="left", padx=5)
-        self.delete_product.pack(side="left", padx=5)
         self.show_distributors.pack(side="left", padx=5)
         self.show_clients.pack(side="left", padx=5)
         self.open_chat.pack(side="left", padx=5)
